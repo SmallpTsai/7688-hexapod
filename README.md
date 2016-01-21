@@ -8,18 +8,18 @@
 
 * Body: 3D printed, go to [STL](STL) folder
 * [LinkIt Smart 7688](labs.mediatek.com/7688)
-* [Adafruit 16-channel PWM driver](https://www.adafruit.com/product/815)
-* SG-90 Servo x 18
-* DC/DC Buck Voltage regulator (MINI 360 from Taobao/[Amazon](http://www.amazon.com/4-75-23V-1-17V-DC-DC-Converter-Module/dp/B00NJCAI7G))
+* [Adafruit 16-channel PWM driver (PCA9685)](https://www.adafruit.com/product/815)
+* SG-90 mini servo x 18
+* DC/DC Buck Voltage regulator (Mini 360 from Taobao/[Amazon](http://www.amazon.com/4-75-23V-1-17V-DC-DC-Converter-Module/dp/B00NJCAI7G))
 * 2-cell LiPo battery
 
 ### Electronics
 
 There are 18 servo controlled by 18 PWM channel, 2 of them are from 7688 itself (GPIO18 & GPIO19), the rest are from the PWM driver connected to 7688 via I2C interface
 
-And because servo draw lots of amount of current (500 mA each), 4 DC/DC buck voltage regulator are used. Each of them provide *3A* current and serve 6 servos (2 legs)
-Voltage regulator 1~3 serve total 18 servo
-Voltage regulator 4 serve 7688 and PCA9685 (PWM driver IC)
+And 4 DC/DC buck voltage regulator are used because servo draw lots of amount of current (500mA each, 9A total). Each of them provide *3A* current and serve 6 servos (2 legs)
+Voltage regulator 1~3 serves all 18 servos
+Voltage regulator 4 serves 7688 and PCA9685 (PWM driver IC)
 
 ## Software
 
