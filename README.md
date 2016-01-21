@@ -30,7 +30,7 @@ The files contains:
 * IK (inverse kinematics) algorithm (check function `loc2angle`)
 * Movement path table (check function `_dance` and array `_danceTable1`)
   * There are 3 path now:
-    1. forward/backward waving ([youtube video](https://youtu.be/CbFrT2eCAvw?t=31))
+    1. forward/backward waving ([youtube video](https://youtu.be/CbFrT2eCAvw?t=37))
     2. left/right waving ([youtube video](https://youtu.be/CbFrT2eCAvw?t=2))
     3. circle waving ([youtube video](https://youtu.be/CbFrT2eCAvw?t=11))
   * The path are pre-generated using another JS
