@@ -32,9 +32,9 @@ The required number of each "Leg" is:
 ![Leg exploded view](images/hexapod_exploded_view_leg.png)
 
 Each leg require:
-* M2 20mm x 5 (x6 = 30)
-* M2 8mm x 4 (x6 = 24)
-* M2 6mm x 3 (x6 = 18)
+* M2 screw 20mm x 5 (x6 = 30)
+* M2 screw 8mm x 4 (x6 = 24)
+* M2 screw 6mm x 3 (x6 = 18)
 * M2 nuts x 5 (x6 = 30)
 
 #### Hexapod (exploded view)
@@ -42,5 +42,6 @@ Each leg require:
 ![Hexapod exploded view](images/hexapod_exploded_view_all.png)
 
 Still require:
-* M2 8mm x 24
+* M2 screw 8mm x 24
+
 to mount all 6 legs onto the body
