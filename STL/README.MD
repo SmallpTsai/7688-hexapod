@@ -27,3 +27,22 @@ PS. There are 6 Legs, so remember to multiply above numbers by 6
 * 3d_7688_mount x 1
 * 3d_dcdc_mount x 1
 
+## Assemble instruction
+
+#### Leg (exploded view)
+
+![Leg exploded view](images/hexapod_exploded_view_leg.png)
+
+Each leg require:
+* M2 20mm x 5 (x6 = 30)
+* M2 8mm x 4 (x6 = 24)
+* M2 6mm x 3 (x6 = 18)
+* M2 nuts x 5 (x6 = 30)
+
+#### Hexapod (exploded view)
+
+![Hexapod exploded view](images/hexapod_exploded_view_all.png)
+
+Still require:
+* M2 8mm x 24
+to mount all 6 legs onto the body
