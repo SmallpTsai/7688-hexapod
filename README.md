@@ -2,7 +2,8 @@
 
 ![7688hexapod](images/7688hexapod.JPG)
 
-[Youtube video](https://www.youtube.com/watch?v=CbFrT2eCAvw)
+[Youtube video1](https://www.youtube.com/watch?v=CbFrT2eCAvw)
+[Youtube video2](https://www.youtube.com/watch?v=70pN0Rd0ca4)
 
 ## Hardware
 
