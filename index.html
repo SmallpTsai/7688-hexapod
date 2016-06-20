@@ -1,0 +1,157 @@
+
+<html>
+<head>
+<style type="text/css">
+* {
+     user-select: none;
+    -khtml-user-select: none;
+    -o-user-select: none;
+    -moz-user-select: -moz-none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+table {
+  font-size:36px; font-family:Arial, Helvetica, sans-serif;
+  width: 100%;
+  height: 95%;
+}
+td {
+  text-align: center;
+  vertical-align: middle;
+  background-color: #CCCCCC;
+}
+
+td.down {
+  background-color: red;
+}
+
+td.disable {
+  background-color: #CCCCCC;
+}
+
+</style>
+<script type="text/javascript">
+var configTable = [
+  "d1", "d2", "d3", "fwd", "bwd", "tl", "tr", "sl", "sr",
+]
+
+var currMode = undefined
+var connected = undefined
+var timer = undefined
+
+function init()
+{
+  connected = false
+  configTable.forEach(function(id) {
+    var obj = document.getElementById("cell_" + id)
+    obj.addEventListener("mousedown", function(evt) {
+      mode(id)
+    })
+    obj.addEventListener("touchstart", function(evt) {
+      mode(id)
+    })
+    obj.addEventListener("mouseup", function(evt) {
+      mode("s")
+    })
+    obj.addEventListener("touchend", function(evt) {
+      mode("s")
+    })
+    obj.className = "disable"
+  })
+
+  var slog = document.getElementById("state_panel");
+  if("WebSocket" in window)
+  {
+    ws = new WebSocket("ws://"+window.location.hostname+":8001");
+    slog.innerHTML = "Connecting...";
+    ws.onopen = function() {
+      slog.innerHTML = "Connected";
+    };
+    ws.onclose = function() {
+      slog.innerHTML = "Disconnected:" + evt.data;
+      connected = false
+    };
+    ws.onmessage = function(evt) {
+      slog.innerHTML = "Connected - " + evt.data;
+      if(evt.data == "control mode")
+        connected = true;
+    }
+    ws.onerror = function(evt) {
+      log.innerHTML = "Error:" + evt.data;
+    }
+  }
+  else
+  {
+    ws = null;
+    slog.innerHTML = "WebSocket is not supported!";
+  }
+
+
+}
+
+function mode(id)
+{
+  if(!connected)
+    return
+
+  if(id == currMode)
+    return
+
+  console.log("mode switch to " + id)
+  currMode = id
+  for(i in configTable) {
+    if(id == configTable[i])
+      document.getElementById("cell_" + configTable[i]).className = "down"
+    else
+      document.getElementById("cell_" + configTable[i]).className = "up"
+  }
+
+  _repeat()
+}
+
+function _repeat()
+{
+  if(timer != undefined)
+  {
+    clearTimeout(timer)
+    timer = undefined
+  }
+
+  if(ws && connected)
+  {
+    ws.send(currMode)
+    if(currMode != "s")
+      timer = setTimeout(_repeat, 2000)
+  }
+}
+
+</script>
+</head>
+<body onload="init()">
+<div id="state_panel"></div>
+<table border=0>
+  <tr>
+    <td id="cell_d1">Dance1</td>
+    <td id="cell_d2">Dance2</td>
+    <td id="cell_d3">Dance3</td>
+  </tr>
+  <tr>
+    <td id="cell_tl">Turn Left</td>
+    <td id="cell_fwd">Forward</td>
+    <td id="cell_tr">Turn Right</td>
+  </tr>
+  <tr>
+    <td id="cell_sl">Shift Left</td>
+    <td id="cell_bwd">Backward</td>
+    <td id="cell_sr">Shift Right</td>
+  </tr>
+</table>
+</body>
+</html>
+
+
+
+
+
+
