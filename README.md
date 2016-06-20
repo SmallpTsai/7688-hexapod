@@ -27,11 +27,11 @@ Voltage regulator 4 serves 7688 and PCA9685 (PWM driver IC)
 
 ## How to Use/Start
 
-* connect to 7688 as root
+* ssh to 7688 as root
   * as root, do `npm install ws`
   * put `hexapod_core.js`, `hexapod_srv.js` and `settings.js` to `/root`
   * put `index.html` to `/www/hexapod/`
-  * edit `/etc/rc.local', add command `node /root/hexapod_srv.js > /root/log 2>&1 &` before exit 0
+  * edit `/etc/rc.local`, add command `node /root/hexapod_srv.js > /root/log 2>&1 &` before exit 0
 * reboot 7688
 * open url `http://mylinkit.local/hexapod` on chrome browser
   * make sure client is in the same network with 7688
