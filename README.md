@@ -2,8 +2,10 @@
 
 ![7688hexapod](/images/7688hexapod.JPG)
 
+[![Youtube video1](http://img.youtube.com/vi/CbFrT2eCAvw/0.jpg)](http://www.youtube.com/watch?v=CbFrT2eCAvw)
 [Youtube video1](https://www.youtube.com/watch?v=CbFrT2eCAvw)
 
+[![Youtube video2](http://img.youtube.com/vi/70pN0Rd0ca4/0.jpg)](http://www.youtube.com/watch?v=70pN0Rd0ca4)
 [Youtube video2](https://www.youtube.com/watch?v=70pN0Rd0ca4)
 
 ## Hardware
