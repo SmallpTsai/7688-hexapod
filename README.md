@@ -27,7 +27,14 @@ Voltage regulator 4 serves 7688 and PCA9685 (PWM driver IC)
 
 ## Software
 
-### hexapod.js
+### How to Use/Start
+
+* as root, do `npm install ws`
+* put hexapod_core.js & hexapod_srv.js to `/root`
+* put index.html to /www/hexapod
+* edit `/etc/local.rc` 
+
+### hexapod_core.js
 
 The files contains:
 * Logic to control 18 servo via I2C or PWM0/1 (check function `writePwm`)
